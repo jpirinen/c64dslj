@@ -14,7 +14,7 @@ c64dslj can be built either with Maven or SBT.
 
 Create fat jar with Maven
 ```
-mvn package
+mvn install
 ```
 
 or with SBT in SBT console

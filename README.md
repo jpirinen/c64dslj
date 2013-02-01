@@ -5,6 +5,8 @@ c64dslj
 
 Write C64 assembler easily in an IDE in Java with the help of c64dslj.
 
+Requires Java 1.6 or later.
+
 License: Apache 2.0.
 
 Building

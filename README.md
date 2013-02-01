@@ -62,7 +62,7 @@ public class FirstExample {
 ```
 The resulting file, firstex.cbm, can be loaded into a C64 emulator and run with SYS 4096.
 
-There are more examples are in the org.pirinen.c64dslj.example package.
+There are more examples in the [org.pirinen.c64dslj.example](https://github.com/jpirinen/c64dslj/tree/master/src/main/java/org/pirinen/c64dslj/example) package.
 
 Quick tutorial
 --------------

@@ -12,7 +12,7 @@ License: Apache 2.0.
 Building
 --------
 
-c64dslj can be built either with Maven or SBT.
+c64dslj can be built either with [Maven](http://maven.apache.org) or [SBT](http://www.scala-sbt.org).
 
 Create fat jar with Maven
 ```
@@ -215,7 +215,7 @@ Program.with()
  .d(16384, hex(
      "1122aabb"
      "331243ff"))
- .build();
+ .build(16384);
 ```
 
 ### Helpers

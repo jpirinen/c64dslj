@@ -7,6 +7,21 @@
     <artifactId>c64dslj</artifactId>
     <packaging>jar</packaging>
     <name>c64dslj: Commodore 64 DSL</name>
+    <distributionManagement>
+      <repository>
+        <id>repo</id>
+        <url>https://github.com/jpirinen/jpirinen-mvn-repo/raw/master/releases</url>
+      </repository>
+      <snapshotRepository>
+        <id>snapshot-repo</id>
+        <url>https://github.com/jpirinen/jpirinen-mvn-repo/raw/master/snapshots</url>
+      </snapshotRepository>
+    </distributionManagement>
+    <scm>
+      <connection>scm:git:git@github.com:jpirinen/c64dslj.git</connection>
+      <developerConnection>scm:git:git@github.com:jpirinen/c64dslj.git</developerConnection>
+      <url>scm:git:git@github.com:jpirinen/c64dslj.git</url>
+    </scm>
     <build>
         <plugins>
             <plugin>
@@ -22,6 +37,7 @@
                <artifactId>maven-shade-plugin</artifactId>
                <version>1.7</version>
                <configuration>
+                 <outputFile>${project.build.directory}/${project.artifactId}-with-dependencies-${project.version}.jar</outputFile> 
                </configuration>
                <executions>
                  <execution>

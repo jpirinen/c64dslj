@@ -24,4 +24,4 @@ parallelExecution in Test := false
 
 assemblySettings
 
-jarName in assembly := "c64dslj-0.9.jar"
+jarName in assembly := "c64dslj-with-dependencies-0.9.jar"

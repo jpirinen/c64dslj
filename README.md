@@ -9,24 +9,49 @@ Requires Java 1.6 or later.
 
 License: Apache 2.0.
 
-Building
---------
+Maven repository
+----------------
+
+c64dslj version 0.9 is now hosted in Github Maven repository. To use, add the repository in the pom.xml of your project
+```
+<repositories>
+  <repository>
+    <id>jpirinen-releases</id>
+    <url>https://github.com/jpirinen/jpirinen-mvn-repo/raw/master/releases</url>
+  </repository>
+</repositories>
+```
+c64dslj can then be included in your project with
+```
+<dependency>
+  <groupId>c64dslj</groupId>
+  <artifactId>c64dslj</artifactId>
+  <version>0.9</version>
+</dependency>
+```
+
+Building from source
+--------------------
 
 c64dslj can be built either with [Maven](http://maven.apache.org) or [SBT](http://www.scala-sbt.org).
 
-Create fat jar with Maven
+Building with Maven
 ```
 mvn install
 ```
+This will create two jar files in `target` directory, `c64dslj-0.9.jar` and
+`c64dslj-with-dependencies-0.9.jar`. The latter is a fat jar, containing
+all dependencies.
 
-or with SBT in SBT console
+Building with SBT in SBT console
 ```
 assembly
 ```
+This will generate one jar file to `target` directory called 
+`c64dslj-with-dependencies-0.9.jar` containing all dependencies.
 
-Either of these will generate one jar to `target` directory called `c64dslj-0.9.jar`.
-
-Add the jar to your project libraries and start coding.
+Add the jar containing dependencies to your project libraries 
+and start coding.
 
 Examples
 --------
@@ -251,8 +276,3 @@ Program p = Program.with()
  * Reverse engineering support, ie. convert C64 binary into DSL
 
 That's all folks! Happy coding!
-
-
-
-
-

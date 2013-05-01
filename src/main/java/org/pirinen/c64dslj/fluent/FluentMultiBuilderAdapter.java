@@ -8,6 +8,7 @@ import org.pirinen.c64dslj.builder.ImpliedBuilder;
 import org.pirinen.c64dslj.builder.IndexedIndirectBuilder;
 import org.pirinen.c64dslj.builder.IndirectBuilder;
 import org.pirinen.c64dslj.builder.IndirectedIndexedBuilder;
+import org.pirinen.c64dslj.builder.RelativeBuilder;
 import org.pirinen.c64dslj.builder.ZeropageBuilder;
 import org.pirinen.c64dslj.builder.ZeropageIndexedXBuilder;
 import org.pirinen.c64dslj.builder.ZeropageIndexedYBuilder;
@@ -73,5 +74,9 @@ abstract class FluentMultiBuilderAdapter extends FluentMultiBuilder {
 	IndirectBuilder<Instruction> getIndirectBuilder() {
 		throw new UnsupportedOperationException("TODO test and implement");
 	}
-
+	
+	@Override
+	RelativeBuilder<Instruction> getRelativeBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 }

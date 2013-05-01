@@ -18,7 +18,7 @@ package org.pirinen.c64dslj.model;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import org.pirinen.c64dslj.builder.AbsIndLabelBuilder;
+import org.pirinen.c64dslj.builder.AbsIndBuilder;
 import org.pirinen.c64dslj.builder.AbsoluteBuilder;
 import org.pirinen.c64dslj.builder.ImmZpAbsBuilder;
 import org.pirinen.c64dslj.builder.ImmZpZpxAbsAbxBuilder;
@@ -91,7 +91,7 @@ public class Instruction {
     public static final Instruction RTI = new MultiBuilder(Opcode.RTI).implied();
     public static final AbsoluteBuilder<Instruction> JSR = new JsrInstructionBuilder(Opcode.JSR);
     public static final Instruction RTS = new MultiBuilder(Opcode.RTS).implied();
-    public static final AbsIndLabelBuilder<Instruction> JMP = new JmpInstructionBuilder(Opcode.JMP);
+    public static final AbsIndBuilder<Instruction> JMP = new JmpInstructionBuilder(Opcode.JMP);
     public static final ZpAbsBuilder<Instruction> BIT = new MultiBuilder(Opcode.BIT);
     public static final Instruction CLC = new MultiBuilder(Opcode.CLC).implied();
     public static final Instruction SEC = new MultiBuilder(Opcode.SEC).implied();

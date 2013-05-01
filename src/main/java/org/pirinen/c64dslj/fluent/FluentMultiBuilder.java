@@ -1,5 +1,6 @@
 package org.pirinen.c64dslj.fluent;
 
+import org.pirinen.c64dslj.builder.AbsIndBuilder;
 import org.pirinen.c64dslj.builder.AbsoluteBuilder;
 import org.pirinen.c64dslj.builder.AbsoluteIndexedXBuilder;
 import org.pirinen.c64dslj.builder.AbsoluteIndexedYBuilder;
@@ -14,6 +15,7 @@ import org.pirinen.c64dslj.builder.ImpliedBuilder;
 import org.pirinen.c64dslj.builder.IndexedIndirectBuilder;
 import org.pirinen.c64dslj.builder.IndirectBuilder;
 import org.pirinen.c64dslj.builder.IndirectedIndexedBuilder;
+import org.pirinen.c64dslj.builder.RelativeBuilder;
 import org.pirinen.c64dslj.builder.ZeropageBuilder;
 import org.pirinen.c64dslj.builder.ZeropageIndexedXBuilder;
 import org.pirinen.c64dslj.builder.ZeropageIndexedYBuilder;
@@ -32,7 +34,7 @@ abstract class FluentMultiBuilder implements
 		ZpZpxIzxIzyAbsAbxAbyBuilder<FluentBuilder>,
 		ZpZpyAbsBuilder<FluentBuilder>, ZpZpxAbsBuilder<FluentBuilder>,
 		ImmZpZpxAbsAbxBuilder<FluentBuilder>, ZpAbsBuilder<FluentBuilder>,
-		IndirectBuilder<FluentBuilder> {
+		AbsIndBuilder<FluentBuilder>, RelativeBuilder<FluentBuilder> {
 
 	private FluentBuilder b;
 
@@ -61,6 +63,8 @@ abstract class FluentMultiBuilder implements
 	abstract ImpliedBuilder<Instruction> getImpliedBuilder();
 
 	abstract IndirectBuilder<Instruction> getIndirectBuilder();
+	
+	abstract RelativeBuilder<Instruction> getRelativeBuilder();
 
 	@Override
 	public FluentBuilder immediate(DataType<Byte> value) {
@@ -184,4 +188,10 @@ abstract class FluentMultiBuilder implements
 		return b;
 	}
 
+	@Override
+	public FluentBuilder label(String label) {
+		b.getProgramBuilder().i(getRelativeBuilder().label(label));
+		return b;
+	}
+	
 }

@@ -15,8 +15,6 @@
 
 package org.pirinen.c64dslj.builder;
 
-import org.pirinen.c64dslj.model.Instruction;
-
-public interface RelativeBuilder extends Builder {
-    Instruction label(String name);
+public interface RelativeBuilder<T> extends Builder {
+    T label(String name);
 }

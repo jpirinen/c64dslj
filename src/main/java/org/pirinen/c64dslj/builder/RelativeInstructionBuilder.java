@@ -20,7 +20,7 @@ import org.pirinen.c64dslj.model.Opcode;
 import org.pirinen.c64dslj.model.Relative;
 import org.pirinen.c64dslj.model.RelativeOperand;
 
-public class RelativeInstructionBuilder extends InstructionBuilder implements RelativeBuilder {
+public class RelativeInstructionBuilder extends InstructionBuilder implements RelativeBuilder<Instruction> {
 
     public RelativeInstructionBuilder(Opcode opcode) {
         super(opcode);

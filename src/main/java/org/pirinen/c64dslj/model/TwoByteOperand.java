@@ -38,6 +38,7 @@ public class TwoByteOperand extends OperandBase {
         return "(" + value + ")";
     }
 
+    @Override
     public int getValue() {
         return value;
     }

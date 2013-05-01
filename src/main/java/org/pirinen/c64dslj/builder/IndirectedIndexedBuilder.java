@@ -15,8 +15,7 @@
 
 package org.pirinen.c64dslj.builder;
 
-import org.pirinen.c64dslj.model.Instruction;
 
-public interface IndirectedIndexedBuilder extends Builder {
-    Instruction indirectIndexed_Y(DataType<Byte> value);
+public interface IndirectedIndexedBuilder<T> extends Builder {
+    T indirectIndexed_Y(DataType<Byte> value);
 }

@@ -18,7 +18,7 @@ public class InstructionSetTest {
     }
 
     @Test
-    public void testGetAndSet() throws Exception {
+    public void testGetAndSet() {
         InstructionSet.getInstance().add(new Command("DEX", 0xCA, new Implied(0xCA)));
         InstructionSet.getInstance().get(0xCA);
         Command c = InstructionSet.getInstance().get("DEX", Implied.class);
@@ -26,7 +26,7 @@ public class InstructionSetTest {
     }
 
     @Test
-    public void testGetAddressingModes() throws Exception {
+    public void testGetAddressingModes() {
         Command c = InstructionSet.getInstance().get(169);
         Assert.assertEquals(1, c.getAddressingMode().getOperandLength());
         c = InstructionSet.getInstance().get(0x40);

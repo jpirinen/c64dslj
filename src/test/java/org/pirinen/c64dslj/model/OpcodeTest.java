@@ -7,7 +7,7 @@ import org.pirinen.c64dslj.model.Opcode;
 public class OpcodeTest {
 
     @Test
-    public void testSingleValueOpcode() throws Exception {
+    public void testSingleValueOpcode() {
         Opcode dex = Opcode.DEX;
         Assert.assertEquals("DEX", dex.name());
     }

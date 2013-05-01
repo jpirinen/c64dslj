@@ -16,4 +16,5 @@
 package org.pirinen.c64dslj.builder;
 
 public interface Builder {
+	// intentionally left blank
 }

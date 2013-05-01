@@ -15,5 +15,6 @@
 
 package org.pirinen.c64dslj.builder;
 
-public interface AbsIndLabelBuilder extends AbsoluteBuilder, IndirectBuilder {
+public interface AbsIndLabelBuilder<T> extends AbsoluteBuilder<T>, IndirectBuilder<T> {
+	// intentionally left blank
 }

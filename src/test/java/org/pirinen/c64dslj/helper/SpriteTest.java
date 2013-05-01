@@ -27,7 +27,7 @@ public class SpriteTest {
         Assert.assertEquals(1, data[3]);    
         Assert.assertEquals(3, data[4]);
         Assert.assertEquals(64, data[10]);
-        Assert.assertEquals(255, (int)(data[64]&0xff));
+        Assert.assertEquals(255, data[64]&0xff);
     }
     
     @Test
@@ -44,7 +44,7 @@ public class SpriteTest {
         Assert.assertEquals(3, data[4]);
         Assert.assertEquals(64, data[10]);
         Assert.assertEquals(0, data[63]);   
-        Assert.assertEquals(255, (int)(data[64]&0xff));
+        Assert.assertEquals(255, data[64]&0xff);
         Assert.assertEquals(0, data[65]);
         Assert.assertEquals(-128, data[66]);    
         Assert.assertEquals(1, data[67]);   
@@ -53,7 +53,7 @@ public class SpriteTest {
     
     
     
-    private Data getSprite() {
+    private static Data getSprite() {
         return monochromeSprite().pixels( 
                   "X..............X......XX",
                   "........................",

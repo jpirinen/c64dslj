@@ -15,9 +15,8 @@
 
 package org.pirinen.c64dslj.builder;
 
-import org.pirinen.c64dslj.model.Instruction;
 
-public interface ImmediateBuilder extends Builder {
-    Instruction immediate(DataType<Byte> value);
-    Instruction immediate(int value);
+public interface ImmediateBuilder<T> extends Builder {
+    T immediate(DataType<Byte> value);
+    T immediate(int value);
 }

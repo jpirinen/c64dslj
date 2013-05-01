@@ -22,7 +22,7 @@ import org.pirinen.c64dslj.model.Instruction;
 import org.pirinen.c64dslj.model.Opcode;
 import org.pirinen.c64dslj.model.TwoByteOperand;
 
-public class JmpInstructionBuilder extends InstructionBuilder implements AbsIndLabelBuilder {
+public class JmpInstructionBuilder extends InstructionBuilder implements AbsIndLabelBuilder<Instruction> {
 
     public JmpInstructionBuilder(Opcode opcode) {
         super(opcode);

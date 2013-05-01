@@ -15,9 +15,8 @@
 
 package org.pirinen.c64dslj.builder;
 
-import org.pirinen.c64dslj.model.Instruction;
 
-public interface ZeropageIndexedYBuilder extends Builder {
-    Instruction zeropage_Y(DataType<Byte> value);
-    Instruction zeropage_Y(int value);
+public interface ZeropageIndexedYBuilder<T> extends Builder {
+    T zeropage_Y(DataType<Byte> value);
+    T zeropage_Y(int value);
 }

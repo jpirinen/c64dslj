@@ -25,7 +25,7 @@ public class UtilTest {
     }
 
     @Test
-    public void testBitstringToInt() throws Exception {
+    public void testBitstringToInt() {
         String bits = "X";
         Assert.assertEquals(1, Util.bitStringToInt(bits, 'X'));
         Assert.assertEquals(0, Util.bitStringToInt(bits, '.'));

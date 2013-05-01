@@ -8,7 +8,7 @@ import org.junit.Test;
 public class HexStringBuilderTest {
     
     @Test
-    public void testBuilder() throws Exception {
+    public void testBuilder() {
         Data data = hex("010203");
         Assert.assertArrayEquals(new byte[]{1,2,3}, data.getValue());
         data = hex("0aff");

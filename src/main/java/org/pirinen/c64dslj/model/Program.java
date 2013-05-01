@@ -31,6 +31,7 @@ import org.pirinen.c64dslj.builder.Data;
 import org.pirinen.c64dslj.builder.DataType;
 import org.pirinen.c64dslj.builder.ProgramBuilder;
 import org.pirinen.c64dslj.builder.ReferenceDataType;
+import org.pirinen.c64dslj.fluent.FluentBuilder;
 
 public class Program {
 
@@ -47,6 +48,11 @@ public class Program {
        
         instance = new Program();
         return new ProgramBuilder(instance);
+    }
+    
+    public static FluentBuilder withFluent() {
+        instance = new Program();
+        return new FluentBuilder(instance);
     }
     
     public static DataType<Byte> msb(String label) {
@@ -70,7 +76,7 @@ public class Program {
         this.startingAddress = startingAddress;
     }
 
-    public void add(Instruction i) throws IOException {
+    public void add(Instruction i) {
         int position = 0;
         if (!instructions.isEmpty()) {
             ProgramInstruction previous = instructions.getLast();
@@ -111,7 +117,7 @@ public class Program {
         }
     }
 
-    public void add(Label l) throws IOException {
+    public void add(Label l) {
         if (labels.containsKey(l.getName())) {
             throw new RuntimeException("Label "+l.getName()+" already exists");
         }
@@ -126,7 +132,7 @@ public class Program {
         }
     }
 
-    private int getLabelPosition() throws IOException {
+    private int getLabelPosition() {
         if (instructions.isEmpty()) {
             return 0;
         }
@@ -181,7 +187,7 @@ public class Program {
         }
     }
 
-    private void fillWithZeroes(OutputStream out, int count) throws IOException {
+    private static void fillWithZeroes(OutputStream out, int count) throws IOException {
         for (int i = 0; i < count; i++) {
             out.write(0);
         }

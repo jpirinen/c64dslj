@@ -15,10 +15,9 @@
 
 package org.pirinen.c64dslj.builder;
 
-import org.pirinen.c64dslj.model.Instruction;
 
-public interface AbsoluteBuilder extends Builder {
-    Instruction absolute(DataType<Integer> value);
-    Instruction absolute(int value);
-    Instruction absolute(String label);
+public interface AbsoluteBuilder<T> extends Builder {
+    T absolute(DataType<Integer> value);
+    T absolute(int value);
+    T absolute(String label);
 }

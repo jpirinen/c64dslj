@@ -15,8 +15,7 @@
 
 package org.pirinen.c64dslj.builder;
 
-import org.pirinen.c64dslj.model.Instruction;
 
-public interface ImpliedBuilder extends Builder {
-    Instruction implied();
+public interface ImpliedBuilder<T> extends Builder {
+    T implied();
 }

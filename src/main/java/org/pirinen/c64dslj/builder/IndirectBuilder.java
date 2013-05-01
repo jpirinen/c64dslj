@@ -15,9 +15,8 @@
 
 package org.pirinen.c64dslj.builder;
 
-import org.pirinen.c64dslj.model.Instruction;
 
-public interface IndirectBuilder extends Builder {
-    Instruction indirect(DataType<Integer> value);
-    Instruction indirect(int value);
+public interface IndirectBuilder<T> extends Builder {
+    T indirect(DataType<Integer> value);
+    T indirect(int value);
 }

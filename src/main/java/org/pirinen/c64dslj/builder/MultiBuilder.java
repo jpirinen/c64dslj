@@ -33,9 +33,9 @@ import org.pirinen.c64dslj.model.Zeropage;
 import org.pirinen.c64dslj.model.ZeropageIndexedX;
 import org.pirinen.c64dslj.model.ZeropageIndexedY;
 
-public class MultiBuilder extends InstructionBuilder implements ImpliedBuilder, ImmZpZpxIzxIzyAbsAbxAbyBuilder,
-        ImmZpAbsBuilder, ZpZpxAbsAbxBuilder, ImpZpZpxAbsAbxBuilder, ImmZpZpyAbsAbyBuilder, ZpZpxIzxIzyAbsAbxAbyBuilder,
-        ZpZpyAbsBuilder, ZpZpxAbsBuilder, ImmZpZpxAbsAbxBuilder, ZeropageIndexedYBuilder, ZpAbsBuilder, IndirectBuilder {
+public class MultiBuilder extends InstructionBuilder implements ImmZpZpxIzxIzyAbsAbxAbyBuilder<Instruction>,
+        ImmZpAbsBuilder<Instruction>, ZpZpxAbsAbxBuilder<Instruction>, ImpZpZpxAbsAbxBuilder<Instruction>, ImmZpZpyAbsAbyBuilder<Instruction>, ZpZpxIzxIzyAbsAbxAbyBuilder<Instruction>,
+        ZpZpyAbsBuilder<Instruction>, ZpZpxAbsBuilder<Instruction>, ImmZpZpxAbsAbxBuilder<Instruction>, ZpAbsBuilder<Instruction>, IndirectBuilder<Instruction> {
 
     public MultiBuilder(Opcode opcode) {
         super(opcode);

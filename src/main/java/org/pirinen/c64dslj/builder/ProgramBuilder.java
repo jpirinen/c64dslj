@@ -15,8 +15,6 @@
 
 package org.pirinen.c64dslj.builder;
 
-import java.io.IOException;
-
 import org.pirinen.c64dslj.model.Command;
 import org.pirinen.c64dslj.model.EmptyOperand;
 import org.pirinen.c64dslj.model.Instruction;
@@ -31,57 +29,57 @@ public class ProgramBuilder {
         p = program;
     }
     
-    public ProgramBuilder b(DataType<Byte> value) throws IOException {
+    public ProgramBuilder b(DataType<Byte> value)  {
         return oneByte(value.getValue());
     }
     
-    public ProgramBuilder oneByte(DataType<Byte> value) throws IOException {
+    public ProgramBuilder oneByte(DataType<Byte> value)  {
         return oneByte(value.getValue());
     }
     
-    public ProgramBuilder b(int value) throws IOException {
+    public ProgramBuilder b(int value)  {
         return oneByte(value);
     }
 
-    public ProgramBuilder oneByte(int value) throws IOException {
+    public ProgramBuilder oneByte(int value)  {
         return instruction(new Instruction(new Command(value), new EmptyOperand()));
     }
     
-    public ProgramBuilder i(Instruction i) throws IOException {
+    public ProgramBuilder i(Instruction i)  {
         return instruction(i);
     }
 
-    public ProgramBuilder label(String name) throws IOException {
+    public ProgramBuilder label(String name) {
         return label(Label.name(name));
     }
 
-    public ProgramBuilder l(String name) throws IOException {
+    public ProgramBuilder l(String name)  {
         return label(Label.name(name));
     }
 
-    public ProgramBuilder data(DataType<Integer> address, Data data) throws IOException {
+    public ProgramBuilder data(DataType<Integer> address, Data data)  {
         return data(address.getValue(), data);
     }
     
-    public ProgramBuilder d(DataType<Integer> address, Data data) throws IOException {
+    public ProgramBuilder d(DataType<Integer> address, Data data)  {
         return data(address.getValue(), data);
     }
     
-    public ProgramBuilder d(int address, Data data) throws IOException {
+    public ProgramBuilder d(int address, Data data)  {
         return data(address, data);
     }
 
-    public ProgramBuilder data(int address, Data data) throws IOException {
+    public ProgramBuilder data(int address, Data data)  {
         p.add(address, data);
         return this;
     }
 
-    public ProgramBuilder instruction(Instruction i) throws IOException {
+    public ProgramBuilder instruction(Instruction i)  {
         p.add(i);
         return this;
     }
 
-    public ProgramBuilder label(Label l) throws IOException {
+    public ProgramBuilder label(Label l) {
         p.add(l);
         return this;
     }

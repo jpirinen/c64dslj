@@ -15,5 +15,6 @@
 
 package org.pirinen.c64dslj.builder;
 
-public interface AbsLabelBuilder extends AbsoluteBuilder, RelativeBuilder {
+public interface AbsLabelBuilder<T> extends AbsoluteBuilder<T>, RelativeBuilder<T> {
+	// intentionally left blank
 }

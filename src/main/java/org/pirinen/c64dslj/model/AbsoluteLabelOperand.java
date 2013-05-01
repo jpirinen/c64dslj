@@ -34,7 +34,8 @@ public class AbsoluteLabelOperand extends LabelOperandBase {
         this.startingAddress = startingAddress;
     }
 
-    public int getValue() {
+    @Override
+	public int getValue() {
         return startingAddress + getLabelPosition();
     }
 

@@ -15,7 +15,6 @@
 
 package org.pirinen.c64dslj.model;
 
-import java.io.IOException;
 
 public class ProgramInstruction {
     private int position;
@@ -30,7 +29,7 @@ public class ProgramInstruction {
         return position;
     }
 
-    public int getNextPosition() throws IOException {
+    public int getNextPosition() {
         return position + instruction.getLength();
     }
 

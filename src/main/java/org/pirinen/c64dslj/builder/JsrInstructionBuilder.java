@@ -21,7 +21,7 @@ import org.pirinen.c64dslj.model.Instruction;
 import org.pirinen.c64dslj.model.Opcode;
 import org.pirinen.c64dslj.model.TwoByteOperand;
 
-public class JsrInstructionBuilder extends InstructionBuilder implements AbsoluteBuilder {
+public class JsrInstructionBuilder extends InstructionBuilder implements AbsoluteBuilder<Instruction> {
 
     public JsrInstructionBuilder(Opcode opcode) {
         super(opcode);

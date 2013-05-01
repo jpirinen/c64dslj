@@ -200,7 +200,7 @@ public class ProgramTest {
         assertProgramData(p, 96, 0, 0, 0, 17, 34, 32);
     }
     
-    private void assertProgramData(Program actual, int... expected) throws IOException {
+    private static void assertProgramData(Program actual, int... expected) throws IOException {
         byte[] data = actual.getData();
         for (int i=0;i<data.length;i++) {
             Assert.assertEquals("Values at position "+i+" do not match", expected[i], data[i]&0xff);

@@ -15,9 +15,8 @@
 
 package org.pirinen.c64dslj.builder;
 
-import org.pirinen.c64dslj.model.Instruction;
 
-public interface AbsoluteIndexedXBuilder extends Builder {
-    Instruction absolute_X(DataType<Integer> value);
-    Instruction absolute_X(int value);
+public interface AbsoluteIndexedXBuilder<T> extends Builder {
+    T absolute_X(DataType<Integer> value);
+    T absolute_X(int value);
 }

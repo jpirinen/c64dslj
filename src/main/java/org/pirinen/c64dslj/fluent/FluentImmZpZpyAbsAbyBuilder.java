@@ -16,19 +16,20 @@
 package org.pirinen.c64dslj.fluent;
 
 import org.pirinen.c64dslj.builder.AbsoluteBuilder;
-import org.pirinen.c64dslj.builder.ImmZpAbsBuilder;
+import org.pirinen.c64dslj.builder.AbsoluteIndexedYBuilder;
+import org.pirinen.c64dslj.builder.ImmZpZpyAbsAbyBuilder;
 import org.pirinen.c64dslj.builder.ImmediateBuilder;
 import org.pirinen.c64dslj.builder.ZeropageBuilder;
+import org.pirinen.c64dslj.builder.ZeropageIndexedYBuilder;
 import org.pirinen.c64dslj.model.Instruction;
 
-public class FluentImmZpAbsBuilder extends FluentMultiBuilderAdapter {
+public class FluentImmZpZpyAbsAbyBuilder extends FluentMultiBuilderAdapter {
+    
+    private ImmZpZpyAbsAbyBuilder<Instruction> ib;
 
-    private ImmZpAbsBuilder<Instruction> ib;
-
-    FluentImmZpAbsBuilder(FluentBuilder b, ImmZpAbsBuilder<Instruction> ib) {
+    FluentImmZpZpyAbsAbyBuilder(FluentBuilder b, ImmZpZpyAbsAbyBuilder<Instruction> ib) {
         super(b);
         this.ib = ib;
-
     }
 
     @Override
@@ -42,7 +43,17 @@ public class FluentImmZpAbsBuilder extends FluentMultiBuilderAdapter {
     }
 
     @Override
+    ZeropageIndexedYBuilder<Instruction> getZeropageIndexedYBuilder() {
+        return ib;
+    }
+
+    @Override
     AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
+        return ib;
+    }
+
+    @Override
+    AbsoluteIndexedYBuilder<Instruction> getAbsoluteIndexedYBuilder() {
         return ib;
     }
 }

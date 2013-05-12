@@ -13,22 +13,29 @@
    limitations under the License.
  */
 
-package org.pirinen.c64dslj.builder;
+package org.pirinen.c64dslj.fluent;
 
+import org.pirinen.c64dslj.builder.AbsoluteBuilder;
+import org.pirinen.c64dslj.builder.ZeropageBuilder;
+import org.pirinen.c64dslj.builder.ZpAbsBuilder;
 import org.pirinen.c64dslj.model.Instruction;
-import org.pirinen.c64dslj.model.Opcode;
-import org.pirinen.c64dslj.model.Relative;
-import org.pirinen.c64dslj.model.RelativeOperand;
 
-public class RelativeInstructionBuilder extends InstructionBuilder implements RelativeBuilder<Instruction> {
+public class FluentZpAbsBuilder extends FluentMultiBuilderAdapter {
 
-    public RelativeInstructionBuilder(Opcode opcode) {
-        super(opcode);
+    private ZpAbsBuilder<Instruction> ib;
+
+    FluentZpAbsBuilder(FluentBuilder b, ZpAbsBuilder<Instruction> ib) {
+        super(b);
+        this.ib = ib;
     }
 
     @Override
-    public Instruction label(String labelName) {
-        return new Instruction(getCommand(Relative.class), new RelativeOperand(labelName));
+    ZeropageBuilder<Instruction> getZeropageBuilder() {
+        return ib;
     }
 
+    @Override
+    AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
+        return ib;
+    }
 }

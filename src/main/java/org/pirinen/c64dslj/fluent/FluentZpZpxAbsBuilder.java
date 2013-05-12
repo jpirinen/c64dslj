@@ -16,24 +16,18 @@
 package org.pirinen.c64dslj.fluent;
 
 import org.pirinen.c64dslj.builder.AbsoluteBuilder;
-import org.pirinen.c64dslj.builder.ImmZpAbsBuilder;
-import org.pirinen.c64dslj.builder.ImmediateBuilder;
 import org.pirinen.c64dslj.builder.ZeropageBuilder;
+import org.pirinen.c64dslj.builder.ZeropageIndexedXBuilder;
+import org.pirinen.c64dslj.builder.ZpZpxAbsBuilder;
 import org.pirinen.c64dslj.model.Instruction;
 
-public class FluentImmZpAbsBuilder extends FluentMultiBuilderAdapter {
+public class FluentZpZpxAbsBuilder extends FluentMultiBuilderAdapter {
 
-    private ImmZpAbsBuilder<Instruction> ib;
+    private ZpZpxAbsBuilder<Instruction> ib;
 
-    FluentImmZpAbsBuilder(FluentBuilder b, ImmZpAbsBuilder<Instruction> ib) {
+    FluentZpZpxAbsBuilder(FluentBuilder b, ZpZpxAbsBuilder<Instruction> ib) {
         super(b);
         this.ib = ib;
-
-    }
-
-    @Override
-    ImmediateBuilder<Instruction> getImmediateBuilder() {
-        return ib;
     }
 
     @Override
@@ -42,7 +36,13 @@ public class FluentImmZpAbsBuilder extends FluentMultiBuilderAdapter {
     }
 
     @Override
+    ZeropageIndexedXBuilder<Instruction> getZeropageIndexedXBuilder() {
+        return ib;
+    }
+
+    @Override
     AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
         return ib;
     }
+
 }

@@ -1,3 +1,18 @@
+/* Copyright 2013 Jukka Pirinen
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
 package org.pirinen.c64dslj.model;
 
 import static org.pirinen.c64dslj.model.Instruction.*;
@@ -6,10 +21,8 @@ import static org.pirinen.c64dslj.builder.HexStringBuilder.hex;
 import static org.pirinen.c64dslj.model.Program.msb;
 import static org.pirinen.c64dslj.model.Program.lsb;
 
-import java.io.IOException;
-
-import org.junit.Assert;
 import org.junit.Test;
+import org.pirinen.c64dslj.TUtil;
 
 public class ProgramTest {
     // Please note, these examples are for testing the dsl and they 
@@ -24,7 +37,7 @@ public class ProgramTest {
           .i(LDA.immediate(_0))
           .i(STA.absolute("index"))
           .i(RTS).build(4096);
-        assertProgramData(p, 20, 10, 169, 0, 141, 1, 16, 96);
+        TUtil.assertProgramData(p, 20, 10, 169, 0, 141, 1, 16, 96);
     }
     
     @Test
@@ -37,7 +50,7 @@ public class ProgramTest {
           .i(STA.absolute("index"))
           .i(INC.absolute("index"))
           .i(RTS).build(4096);
-        assertProgramData(p, 20, 10, 169, 0, 141, 1, 16, 238, 1, 16, 96);
+        TUtil.assertProgramData(p, 20, 10, 169, 0, 141, 1, 16, 238, 1, 16, 96);
     }
     
     @Test
@@ -49,7 +62,7 @@ public class ProgramTest {
            .label("index")
           .b(10)
           .build(4096);
-        assertProgramData(p, 169, 0, 141, 6, 16, 96, 10);
+        TUtil.assertProgramData(p, 169, 0, 141, 6, 16, 96, 10);
     }
     
     @Test
@@ -62,7 +75,7 @@ public class ProgramTest {
            .label("index")
           .b(10)
           .build(4096);
-        assertProgramData(p, 169, 0, 141, 9, 16, 238, 9, 16, 96, 10);
+        TUtil.assertProgramData(p, 169, 0, 141, 9, 16, 238, 9, 16, 96, 10);
     }
     
     @Test
@@ -74,7 +87,7 @@ public class ProgramTest {
           .i(LDA.immediate(msb("start")))
           .i(LDA.immediate(lsb("start")))
           .i(RTS).build(8200);
-        assertProgramData(p, 169, 0, 141, 32, 208, 169, 32, 169, 8, 96);
+        TUtil.assertProgramData(p, 169, 0, 141, 32, 208, 169, 32, 169, 8, 96);
     }
     
     @Test
@@ -83,7 +96,7 @@ public class ProgramTest {
           .i(LDA.immediate(_0))
           .i(STA.absolute(53280))
           .i(RTS).build();
-        assertProgramData(p, 169, 0, 141, 32, 208, 96);
+        TUtil.assertProgramData(p, 169, 0, 141, 32, 208, 96);
     }
     
     @Test
@@ -97,7 +110,7 @@ public class ProgramTest {
           .i(BNE.label("loop"))
           .i(RTS)
           .build(4096);
-        assertProgramData(p, 169, 0, 0xAA, 0xFE, 0x00, 4, 0xE8, 0xD0, 250, 96);
+        TUtil.assertProgramData(p, 169, 0, 0xAA, 0xFE, 0x00, 4, 0xE8, 0xD0, 250, 96);
     }
     
     @Test
@@ -110,7 +123,7 @@ public class ProgramTest {
                 .label("loop")
                 .i(RTS)
                 .build(4096);
-        assertProgramData(p, 169, 4, 141, 32, 208, 0xD0, 3, 141, 33, 208, 96);
+        TUtil.assertProgramData(p, 169, 4, 141, 32, 208, 0xD0, 3, 141, 33, 208, 96);
     }
     
     @Test
@@ -120,7 +133,7 @@ public class ProgramTest {
                 .i(INC.absolute(53280))
                 .i(JMP.absolute("loop"))
                 .build(4096);
-        assertProgramData(p, 0xEE, 32, 208, 0x4C, 0, 16);
+        TUtil.assertProgramData(p, 0xEE, 32, 208, 0x4C, 0, 16);
     }
     
     @Test
@@ -133,7 +146,7 @@ public class ProgramTest {
                 .label("loop")
                 .i(RTS)
                 .build(4096);
-        assertProgramData(p, 169, 0, 141, 32, 208, 0x4C, 11, 16, 141, 33, 208, 96);
+        TUtil.assertProgramData(p, 169, 0, 141, 32, 208, 0x4C, 11, 16, 141, 33, 208, 96);
     }
     
     @Test
@@ -146,7 +159,7 @@ public class ProgramTest {
                 .i(STY.absolute(53280))
                 .i(RTS)
                 .build(16384);
-        assertProgramData(p, 0x4C, 4, 64, 96, 160, 3, 140, 32, 208, 96);
+        TUtil.assertProgramData(p, 0x4C, 4, 64, 96, 160, 3, 140, 32, 208, 96);
     }
     
     @Test
@@ -162,7 +175,7 @@ public class ProgramTest {
                 .i(RTS)
                 .i(BRK)
                 .build(4096);
-        assertProgramData(p, 162, 0, 142, 32, 208, 0x4C, 15, 16, 142, 33, 208, 232, 142, 32, 208, 96, 0);
+        TUtil.assertProgramData(p, 162, 0, 142, 32, 208, 0x4C, 15, 16, 142, 33, 208, 232, 142, 32, 208, 96, 0);
     }
     
     @Test
@@ -175,7 +188,7 @@ public class ProgramTest {
                 .i(STY.absolute(53280))
                 .i(RTS)
                 .build(16384);
-        assertProgramData(p, 32, 4, 64, 96, 160, 3, 140, 32, 208, 96);
+        TUtil.assertProgramData(p, 32, 4, 64, 96, 160, 3, 140, 32, 208, 96);
     }
     
     @Test
@@ -188,7 +201,7 @@ public class ProgramTest {
                 .i(JSR.absolute("subroutine1"))
                 .i(RTS)
                 .build(16384);
-        assertProgramData(p, 160, 16, 140, 32, 208, 96, 32, 0, 64, 96);
+        TUtil.assertProgramData(p, 160, 16, 140, 32, 208, 96, 32, 0, 64, 96);
     }
     
     @Test
@@ -197,13 +210,8 @@ public class ProgramTest {
                 .d(16384, hex("112220"))
                 .i(RTS)
                 .build(16380);
-        assertProgramData(p, 96, 0, 0, 0, 17, 34, 32);
+        TUtil.assertProgramData(p, 96, 0, 0, 0, 17, 34, 32);
     }
     
-    private static void assertProgramData(Program actual, int... expected) throws IOException {
-        byte[] data = actual.getData();
-        for (int i=0;i<data.length;i++) {
-            Assert.assertEquals("Values at position "+i+" do not match", expected[i], data[i]&0xff);
-        }
-    }
+    
 }

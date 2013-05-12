@@ -64,6 +64,16 @@ public class Program {
         DataType<Byte> dt = new ReferenceDataType(instance, label, false);
         return dt;
     }
+    
+    public static DataType<Byte> addressLsb(String label) {
+        DataType<Byte> dt = new ReferenceDataType(instance, label, false);
+        return dt;
+    }
+    
+    public static DataType<Byte> addressMsb(String label) {
+        DataType<Byte> dt = new ReferenceDataType(instance, label, true);
+        return dt;
+    }
 
     private Program() {
         instructions = new LinkedList<ProgramInstruction>();

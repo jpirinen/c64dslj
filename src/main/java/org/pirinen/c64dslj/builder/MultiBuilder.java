@@ -28,6 +28,8 @@ import org.pirinen.c64dslj.model.IndirectIndexed;
 import org.pirinen.c64dslj.model.Instruction;
 import org.pirinen.c64dslj.model.OneByteOperand;
 import org.pirinen.c64dslj.model.Opcode;
+import org.pirinen.c64dslj.model.Relative;
+import org.pirinen.c64dslj.model.RelativeOperand;
 import org.pirinen.c64dslj.model.TwoByteOperand;
 import org.pirinen.c64dslj.model.Zeropage;
 import org.pirinen.c64dslj.model.ZeropageIndexedX;
@@ -35,7 +37,7 @@ import org.pirinen.c64dslj.model.ZeropageIndexedY;
 
 public class MultiBuilder extends InstructionBuilder implements ImmZpZpxIzxIzyAbsAbxAbyBuilder<Instruction>,
         ImmZpAbsBuilder<Instruction>, ZpZpxAbsAbxBuilder<Instruction>, ImpZpZpxAbsAbxBuilder<Instruction>, ImmZpZpyAbsAbyBuilder<Instruction>, ZpZpxIzxIzyAbsAbxAbyBuilder<Instruction>,
-        ZpZpyAbsBuilder<Instruction>, ZpZpxAbsBuilder<Instruction>, ImmZpZpxAbsAbxBuilder<Instruction>, ZpAbsBuilder<Instruction>, IndirectBuilder<Instruction> {
+        ZpZpyAbsBuilder<Instruction>, ZpZpxAbsBuilder<Instruction>, ImmZpZpxAbsAbxBuilder<Instruction>, ZpAbsBuilder<Instruction>, AbsIndBuilder<Instruction>, RelativeBuilder<Instruction>  {
 
     public MultiBuilder(Opcode opcode) {
         super(opcode);
@@ -139,5 +141,10 @@ public class MultiBuilder extends InstructionBuilder implements ImmZpZpxIzxIzyAb
     @Override
     public Instruction zeropage_Y(int value) {
         return zeropage_Y(new ByteDec(value));
+    }
+    
+    @Override
+    public Instruction label(String labelName) {
+        return new Instruction(getCommand(Relative.class), new RelativeOperand(labelName));
     }
 }

@@ -14,7 +14,7 @@ import org.pirinen.c64dslj.model.Instruction;
 class FluentImmZpZpxIzxIzyAbsAbxAbyBuilder extends FluentMultiBuilderAdapter {
     private ImmZpZpxIzxIzyAbsAbxAbyBuilder<Instruction> ib;
     
-    public FluentImmZpZpxIzxIzyAbsAbxAbyBuilder(FluentBuilder b, ImmZpZpxIzxIzyAbsAbxAbyBuilder<Instruction> ib) {
+    FluentImmZpZpxIzxIzyAbsAbxAbyBuilder(FluentBuilder b, ImmZpZpxIzxIzyAbsAbxAbyBuilder<Instruction> ib) {
         super(b);
         this.ib = ib;
     }

@@ -13,23 +13,18 @@
    limitations under the License.
 */
 
-package org.pirinen.c64dslj.fluent;
+package org.pirinen.c64dslj;
 
-import static org.pirinen.c64dslj.builder.ByteHex.$01;
+import java.io.IOException;
 
-import org.junit.Test;
-import org.pirinen.c64dslj.TUtil;
+import org.junit.Assert;
 import org.pirinen.c64dslj.model.Program;
 
-public class FluentBuilderTest {
-	
-    @Test
-    public void testSimpleProgram() throws Exception {
-        FluentBuilder b = Program.withFluent();
-        b.lda().immediate($01)
-         .sta().absolute(53281)
-         .rts();
-        Program p = b.end(4096);
-        TUtil.assertProgramData(p, 169, 1, 141, 33, 208, 96);
+public class TUtil {
+	public static void assertProgramData(Program actual, int... expected) throws IOException {
+        byte[] data = actual.getData();
+        for (int i=0;i<data.length;i++) {
+            Assert.assertEquals("Values at position "+i+" do not match", expected[i], data[i]&0xff);
+        }
     }
 }

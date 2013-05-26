@@ -12,3 +12,4 @@ target/
 # eclipse
 .project
 .classpath
+.settings

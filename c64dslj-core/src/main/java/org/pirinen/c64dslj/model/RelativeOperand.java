@@ -11,7 +11,7 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
@@ -19,31 +19,31 @@ import org.pirinen.c64dslj.Util;
 
 public class RelativeOperand extends LabelOperandBase {
 
-    public RelativeOperand(String labelName) {
-        super(labelName);
-    }
+	public RelativeOperand(String labelName) {
+		super(labelName);
+	}
 
-    @Override
-    public byte[] getData() {
-        return new byte[] { Util.offsetToByte(getOffset()) };
-    }
+	@Override
+	public byte[] getData() {
+		return new byte[] { Util.offsetToByte(getOffset()) };
+	}
 
-    @Override
-    public int getValue() {
-        return Util.offsetToByte(getOffset());
-    }
+	@Override
+	public int getValue() {
+		return Util.offsetToByte(getOffset());
+	}
 
-    @Override
-    public String toString() {
-        return "" + getOffset();
-    }
+	@Override
+	public String toString() {
+		return "" + getOffset();
+	}
 
-    public int getOffset() {
-        return getLabelPosition() - getPosition() - 2;
-    }
+	public int getOffset() {
+		return getLabelPosition() - getPosition() - 2;
+	}
 
-    @Override
-    public int getLength() {
-        return 1;
-    }
+	@Override
+	public int getLength() {
+		return 1;
+	}
 }

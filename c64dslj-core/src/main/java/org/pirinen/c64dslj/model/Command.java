@@ -11,41 +11,42 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
 public class Command {
 
-    private String opcode;
-    private Integer opcodeValue;
-    private AddressingMode addressingMode;
+	private String opcode;
+	private Integer opcodeValue;
+	private AddressingMode addressingMode;
 
-    
-    public Command(Integer opcodeValue) {
-        this("???", opcodeValue, new None(opcodeValue));
-    }
-    
-    public Command(String opcode, Integer opcodeValue, AddressingMode addressingMode) {
-        this.opcode = opcode;
-        this.opcodeValue = opcodeValue;
-        this.addressingMode = addressingMode;
-    }
+	public Command(Integer opcodeValue) {
+		this("???", opcodeValue, new None(opcodeValue));
+	}
 
-    public String getOpcode() {
-        return opcode;
-    }
+	public Command(String opcode, Integer opcodeValue,
+			AddressingMode addressingMode) {
+		this.opcode = opcode;
+		this.opcodeValue = opcodeValue;
+		this.addressingMode = addressingMode;
+	}
 
-    public Integer getOpcodeValue() {
-        return opcodeValue;
-    }
+	public String getOpcode() {
+		return opcode;
+	}
 
-    public AddressingMode getAddressingMode() {
-        return addressingMode;
-    }
+	public Integer getOpcodeValue() {
+		return opcodeValue;
+	}
 
-    @Override
-    public String toString() {
-        return opcode + ":" + addressingMode.getClass().getSimpleName() + ":" + opcodeValue;
-    }
+	public AddressingMode getAddressingMode() {
+		return addressingMode;
+	}
+
+	@Override
+	public String toString() {
+		return opcode + ":" + addressingMode.getClass().getSimpleName() + ":"
+				+ opcodeValue;
+	}
 }

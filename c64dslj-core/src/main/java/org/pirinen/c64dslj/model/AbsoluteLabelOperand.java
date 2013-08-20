@@ -11,41 +11,40 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
 public class AbsoluteLabelOperand extends LabelOperandBase {
-    private int startingAddress;
-  
+	private int startingAddress;
 
- 
-    public AbsoluteLabelOperand(String labelName) {
-        super(labelName);
-    }
+	public AbsoluteLabelOperand(String labelName) {
+		super(labelName);
+	}
 
-    @Override
-    public byte[] getData() {
-        TwoByteOperand operand = new TwoByteOperand(startingAddress + getLabelPosition());
-        return operand.getData();
-    }
+	@Override
+	public byte[] getData() {
+		TwoByteOperand operand = new TwoByteOperand(startingAddress
+				+ getLabelPosition());
+		return operand.getData();
+	}
 
-    public void setStartingAddress(int startingAddress) {
-        this.startingAddress = startingAddress;
-    }
+	public void setStartingAddress(int startingAddress) {
+		this.startingAddress = startingAddress;
+	}
 
-    @Override
+	@Override
 	public int getValue() {
-        return startingAddress + getLabelPosition();
-    }
+		return startingAddress + getLabelPosition();
+	}
 
-    @Override
-    public String toString() {
-        return " (" + startingAddress + getLabelPosition() + ")";
-    }
+	@Override
+	public String toString() {
+		return " (" + startingAddress + getLabelPosition() + ")";
+	}
 
-    @Override
-    public int getLength() {
-        return 2;
-    }
+	@Override
+	public int getLength() {
+		return 2;
+	}
 }

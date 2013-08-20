@@ -15,8 +15,8 @@
 
 package org.pirinen.c64dslj.builder;
 
-
 public interface AbsoluteIndexedXBuilder<T> extends Builder {
-    T absolute_X(DataType<Integer> value);
-    T absolute_X(int value);
+	T absolute_X(DataType<Integer> value);
+
+	T absolute_X(int value);
 }

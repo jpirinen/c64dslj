@@ -15,7 +15,6 @@
 
 package org.pirinen.c64dslj.builder;
 
-
 public interface IndexedIndirectBuilder<T> extends Builder {
-    T indexedIndirect_X(DataType<Byte> value);
+	T indexedIndirect_X(DataType<Byte> value);
 }

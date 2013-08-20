@@ -11,33 +11,33 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
 public class Label {
 
-    private String name;
-    private int position;
+	private String name;
+	private int position;
 
-    private Label(String name) {
-        this.name = name;
-    }
+	private Label(String name) {
+		this.name = name;
+	}
 
-    public static Label name(String name) {
-        return new Label(name);
-    }
+	public static Label name(String name) {
+		return new Label(name);
+	}
 
-    void setPosition(int pos) {
-        this.position = pos;
-    }
+	void setPosition(int pos) {
+		this.position = pos;
+	}
 
-    public int getPosition() {
-        return position;
-    }
+	public int getPosition() {
+		return position;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
 }

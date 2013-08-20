@@ -15,8 +15,8 @@
 
 package org.pirinen.c64dslj.builder;
 
-
 public interface AbsoluteIndexedYBuilder<T> extends Builder {
-    T absolute_Y(DataType<Integer> value);
-    T absolute_Y(int value);
+	T absolute_Y(DataType<Integer> value);
+
+	T absolute_Y(int value);
 }

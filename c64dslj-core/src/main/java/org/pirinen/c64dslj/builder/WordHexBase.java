@@ -11,21 +11,21 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.builder;
 
 public abstract class WordHexBase implements DataType<Integer> {
 
-    private int value;
-    
-    protected WordHexBase(int value) {
-        this.value = value;
-    }
-    
-    @Override
-    public Integer getValue() {
-        return value;
-    }
+	private int value;
+
+	protected WordHexBase(int value) {
+		this.value = value;
+	}
+
+	@Override
+	public Integer getValue() {
+		return value;
+	}
 
 }

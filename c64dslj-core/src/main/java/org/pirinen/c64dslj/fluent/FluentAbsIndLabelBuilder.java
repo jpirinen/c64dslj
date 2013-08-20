@@ -22,21 +22,21 @@ import org.pirinen.c64dslj.model.Instruction;
 
 public class FluentAbsIndLabelBuilder extends FluentMultiBuilderAdapter {
 
-    private AbsIndBuilder<Instruction> ib;
+	private AbsIndBuilder<Instruction> ib;
 
-    FluentAbsIndLabelBuilder(FluentBuilder b, AbsIndBuilder<Instruction> ib) {
-        super(b);
-        this.ib = ib;
-    }
+	FluentAbsIndLabelBuilder(FluentBuilder b, AbsIndBuilder<Instruction> ib) {
+		super(b);
+		this.ib = ib;
+	}
 
-    @Override
-    AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
-        return ib;
-    }
+	@Override
+	AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
+		return ib;
+	}
 
-    @Override
-    IndirectBuilder<Instruction> getIndirectBuilder() {
-        return ib;
-    }
+	@Override
+	IndirectBuilder<Instruction> getIndirectBuilder() {
+		return ib;
+	}
 
 }

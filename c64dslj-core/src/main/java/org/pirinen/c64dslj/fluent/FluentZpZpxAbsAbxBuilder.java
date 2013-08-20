@@ -24,30 +24,30 @@ import org.pirinen.c64dslj.model.Instruction;
 
 public class FluentZpZpxAbsAbxBuilder extends FluentMultiBuilderAdapter {
 
-    private ZpZpxAbsAbxBuilder<Instruction> ib;
+	private ZpZpxAbsAbxBuilder<Instruction> ib;
 
-    FluentZpZpxAbsAbxBuilder(FluentBuilder b, ZpZpxAbsAbxBuilder<Instruction> ib) {
-        super(b);
-        this.ib = ib;
-    }
+	FluentZpZpxAbsAbxBuilder(FluentBuilder b, ZpZpxAbsAbxBuilder<Instruction> ib) {
+		super(b);
+		this.ib = ib;
+	}
 
-    @Override
-    ZeropageBuilder<Instruction> getZeropageBuilder() {
-        return ib;
-    }
+	@Override
+	ZeropageBuilder<Instruction> getZeropageBuilder() {
+		return ib;
+	}
 
-    @Override
-    ZeropageIndexedXBuilder<Instruction> getZeropageIndexedXBuilder() {
-        return ib;
-    }
+	@Override
+	ZeropageIndexedXBuilder<Instruction> getZeropageIndexedXBuilder() {
+		return ib;
+	}
 
-    @Override
-    AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
-        return ib;
-    }
+	@Override
+	AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
+		return ib;
+	}
 
-    @Override
-    AbsoluteIndexedXBuilder<Instruction> getAbsoluteIndexedXBuilder() {
-        return ib;
-    }
+	@Override
+	AbsoluteIndexedXBuilder<Instruction> getAbsoluteIndexedXBuilder() {
+		return ib;
+	}
 }

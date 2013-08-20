@@ -11,7 +11,7 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.helper;
 
@@ -20,20 +20,20 @@ import org.pirinen.c64dslj.builder.DataBuilder;
 
 public class SpriteBuilder implements DataBuilder {
 
-    private Sprite sprite;
+	private Sprite sprite;
 
-    public SpriteBuilder(Sprite sprite) {
-        this.sprite = sprite;
-    }
+	public SpriteBuilder(Sprite sprite) {
+		this.sprite = sprite;
+	}
 
-    public SpriteBuilder pixels(String... pixels) {
-        sprite.setPixelStrings(pixels);
-        return this;
-    }
+	public SpriteBuilder pixels(String... pixels) {
+		sprite.setPixelStrings(pixels);
+		return this;
+	}
 
-    @Override
-    public Data build() {
-        return new Data(sprite.getBytes());
-    }
+	@Override
+	public Data build() {
+		return new Data(sprite.getBytes());
+	}
 
 }

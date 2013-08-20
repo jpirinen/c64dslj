@@ -11,47 +11,47 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
 public abstract class LabelOperandBase implements Operand {
-    
-    private String labelName;
-    private int position;
-    private int labelPosition;
-    
-    public LabelOperandBase(String labelName) {
-        this.labelName = labelName;
-    }
 
-    public String getLabelName() {
-        return labelName;
-    }
+	private String labelName;
+	private int position;
+	private int labelPosition;
 
-    public int getPosition() {
-        return position;
-    }
+	public LabelOperandBase(String labelName) {
+		this.labelName = labelName;
+	}
 
-    public void setPosition(int position) {
-        this.position = position;
-    }
+	public String getLabelName() {
+		return labelName;
+	}
 
-    @Override
-    public boolean isLabel() {
-        return true;
-    }
+	public int getPosition() {
+		return position;
+	}
 
-    @Override
-    public String toDsl() {
-        return "(\"" + getLabelName() + "\")";
-    }
+	public void setPosition(int position) {
+		this.position = position;
+	}
 
-    public void setLabelPosition(int position) {
-        labelPosition = position;
-    }
-    
-    protected int getLabelPosition() {
-        return labelPosition;
-    }
+	@Override
+	public boolean isLabel() {
+		return true;
+	}
+
+	@Override
+	public String toDsl() {
+		return "(\"" + getLabelName() + "\")";
+	}
+
+	public void setLabelPosition(int position) {
+		labelPosition = position;
+	}
+
+	protected int getLabelPosition() {
+		return labelPosition;
+	}
 }

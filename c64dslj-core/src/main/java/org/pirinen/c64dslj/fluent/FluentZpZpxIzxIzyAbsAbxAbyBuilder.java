@@ -11,7 +11,7 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.fluent;
 
@@ -26,46 +26,47 @@ import org.pirinen.c64dslj.builder.ZpZpxIzxIzyAbsAbxAbyBuilder;
 import org.pirinen.c64dslj.model.Instruction;
 
 class FluentZpZpxIzxIzyAbsAbxAbyBuilder extends FluentMultiBuilderAdapter {
-    
-    private ZpZpxIzxIzyAbsAbxAbyBuilder<Instruction> ib;
-    
-    FluentZpZpxIzxIzyAbsAbxAbyBuilder(FluentBuilder b, ZpZpxIzxIzyAbsAbxAbyBuilder<Instruction> ib) {
-        super(b);
-        this.ib = ib;
-    }
-    
-    @Override
-    ZeropageBuilder<Instruction> getZeropageBuilder() {
-    	return ib;
-    }
-    
-    @Override
-    ZeropageIndexedXBuilder<Instruction> getZeropageIndexedXBuilder() {
-    	return ib;
-    }
-    
-    @Override
-    IndexedIndirectBuilder<Instruction> getIndexedIndirectBuilder() {
-    	return ib;
-    }
-    
-    @Override
-    IndirectedIndexedBuilder<Instruction> getIndirectedIndexedBuilder() {
-    	return ib;
-    }
-   
-    @Override
-    AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
-    	return ib;
-    }
-    
-    @Override
-    AbsoluteIndexedXBuilder<Instruction> getAbsoluteIndexedXBuilder() {
-    	return ib;
-    }
-    
-    @Override
-    AbsoluteIndexedYBuilder<Instruction> getAbsoluteIndexedYBuilder() {
-    	return ib;
-    }
+
+	private ZpZpxIzxIzyAbsAbxAbyBuilder<Instruction> ib;
+
+	FluentZpZpxIzxIzyAbsAbxAbyBuilder(FluentBuilder b,
+			ZpZpxIzxIzyAbsAbxAbyBuilder<Instruction> ib) {
+		super(b);
+		this.ib = ib;
+	}
+
+	@Override
+	ZeropageBuilder<Instruction> getZeropageBuilder() {
+		return ib;
+	}
+
+	@Override
+	ZeropageIndexedXBuilder<Instruction> getZeropageIndexedXBuilder() {
+		return ib;
+	}
+
+	@Override
+	IndexedIndirectBuilder<Instruction> getIndexedIndirectBuilder() {
+		return ib;
+	}
+
+	@Override
+	IndirectedIndexedBuilder<Instruction> getIndirectedIndexedBuilder() {
+		return ib;
+	}
+
+	@Override
+	AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
+		return ib;
+	}
+
+	@Override
+	AbsoluteIndexedXBuilder<Instruction> getAbsoluteIndexedXBuilder() {
+		return ib;
+	}
+
+	@Override
+	AbsoluteIndexedYBuilder<Instruction> getAbsoluteIndexedYBuilder() {
+		return ib;
+	}
 }

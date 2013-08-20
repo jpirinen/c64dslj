@@ -21,13 +21,13 @@ import org.pirinen.c64dslj.model.InstructionSet;
 import org.pirinen.c64dslj.model.Opcode;
 
 public abstract class InstructionBuilder {
-    private Opcode opcode;
+	private Opcode opcode;
 
-    public InstructionBuilder(Opcode opcode) {
-        this.opcode = opcode;
-    }
+	public InstructionBuilder(Opcode opcode) {
+		this.opcode = opcode;
+	}
 
-    protected Command getCommand(Class<? extends AddressingMode> modeClass) {
-        return InstructionSet.getInstance().get(opcode.name(), modeClass);
-    }
+	protected Command getCommand(Class<? extends AddressingMode> modeClass) {
+		return InstructionSet.getInstance().get(opcode.name(), modeClass);
+	}
 }

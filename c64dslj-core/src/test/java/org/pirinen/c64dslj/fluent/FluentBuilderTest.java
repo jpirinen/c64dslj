@@ -11,7 +11,7 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.fluent;
 
@@ -22,14 +22,12 @@ import org.pirinen.c64dslj.TUtil;
 import org.pirinen.c64dslj.model.Program;
 
 public class FluentBuilderTest {
-	
-    @Test
-    public void testSimpleProgram() throws Exception {
-        FluentBuilder b = Program.withFluent();
-        b.lda().immediate($01)
-         .sta().absolute(53281)
-         .rts();
-        Program p = b.end(4096);
-        TUtil.assertProgramData(p, 169, 1, 141, 33, 208, 96);
-    }
+
+	@Test
+	public void testSimpleProgram() throws Exception {
+		FluentBuilder b = Program.withFluent();
+		b.lda().immediate($01).sta().absolute(53281).rts();
+		Program p = b.end(4096);
+		TUtil.assertProgramData(p, 169, 1, 141, 33, 208, 96);
+	}
 }

@@ -11,7 +11,7 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
@@ -20,38 +20,39 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class InstructionSet {
-    private static InstructionSet instance = new InstructionSet();
+	private static InstructionSet instance = new InstructionSet();
 
-    private Map<Integer, Command> instructions = new HashMap<Integer, Command>();
+	private Map<Integer, Command> instructions = new HashMap<Integer, Command>();
 
-    public static InstructionSet getInstance() {
-        return instance;
-    }
+	public static InstructionSet getInstance() {
+		return instance;
+	}
 
-    private InstructionSet() {
+	private InstructionSet() {
 
-    }
+	}
 
-    public void add(Command i) {
-        instructions.put(i.getOpcodeValue(), i);
-    }
+	public void add(Command i) {
+		instructions.put(i.getOpcodeValue(), i);
+	}
 
-    public Command get(int value) {
-        return instructions.get(value);
-    }
+	public Command get(int value) {
+		return instructions.get(value);
+	}
 
-    public Command get(String opcode, Class<? extends AddressingMode> modeClass) {
-        for (Entry<Integer, Command> entry : instructions.entrySet()) {
-            Command cmd = entry.getValue();
-            if (cmd.getAddressingMode().getClass().equals(modeClass) && cmd.getOpcode().equals(opcode)) {
-                return entry.getValue();
-            }
-        }
-        return null;
-    }
+	public Command get(String opcode, Class<? extends AddressingMode> modeClass) {
+		for (Entry<Integer, Command> entry : instructions.entrySet()) {
+			Command cmd = entry.getValue();
+			if (cmd.getAddressingMode().getClass().equals(modeClass)
+					&& cmd.getOpcode().equals(opcode)) {
+				return entry.getValue();
+			}
+		}
+		return null;
+	}
 
-    @Override
-    public String toString() {
-        return "6502/6510 processor instruction set";
-    }
+	@Override
+	public String toString() {
+		return "6502/6510 processor instruction set";
+	}
 }

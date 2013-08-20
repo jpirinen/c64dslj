@@ -15,8 +15,8 @@
 
 package org.pirinen.c64dslj.builder;
 
-
 public interface ImmediateBuilder<T> extends Builder {
-    T immediate(DataType<Byte> value);
-    T immediate(int value);
+	T immediate(DataType<Byte> value);
+
+	T immediate(int value);
 }

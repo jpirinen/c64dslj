@@ -15,9 +15,10 @@
 
 package org.pirinen.c64dslj.builder;
 
-
 public interface AbsoluteBuilder<T> extends Builder {
-    T absolute(DataType<Integer> value);
-    T absolute(int value);
-    T absolute(String label);
+	T absolute(DataType<Integer> value);
+
+	T absolute(int value);
+
+	T absolute(String label);
 }

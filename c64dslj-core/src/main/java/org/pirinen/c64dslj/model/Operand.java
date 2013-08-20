@@ -11,18 +11,18 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
 public interface Operand {
-    byte[] getData();
+	byte[] getData();
 
-    boolean isLabel();
+	boolean isLabel();
 
-    String toDsl();
+	String toDsl();
 
-    int getValue();
-    
-    int getLength();
+	int getValue();
+
+	int getLength();
 }

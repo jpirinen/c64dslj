@@ -31,67 +31,67 @@ import org.pirinen.c64dslj.model.Instruction;
 
 abstract class FluentMultiBuilderAdapter extends FluentMultiBuilder {
 
-    FluentMultiBuilderAdapter(FluentBuilder b) {
-        super(b);
-    }
+	FluentMultiBuilderAdapter(FluentBuilder b) {
+		super(b);
+	}
 
-    @Override
-    ImmediateBuilder<Instruction> getImmediateBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	ImmediateBuilder<Instruction> getImmediateBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 
-    @Override
-    ZeropageBuilder<Instruction> getZeropageBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	ZeropageBuilder<Instruction> getZeropageBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 
-    @Override
-    ZeropageIndexedXBuilder<Instruction> getZeropageIndexedXBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	ZeropageIndexedXBuilder<Instruction> getZeropageIndexedXBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 
-    @Override
-    ZeropageIndexedYBuilder<Instruction> getZeropageIndexedYBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	ZeropageIndexedYBuilder<Instruction> getZeropageIndexedYBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 
-    @Override
-    IndexedIndirectBuilder<Instruction> getIndexedIndirectBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	IndexedIndirectBuilder<Instruction> getIndexedIndirectBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 
-    @Override
-    IndirectedIndexedBuilder<Instruction> getIndirectedIndexedBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	IndirectedIndexedBuilder<Instruction> getIndirectedIndexedBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 
-    @Override
-    AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 
-    @Override
-    AbsoluteIndexedXBuilder<Instruction> getAbsoluteIndexedXBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	AbsoluteIndexedXBuilder<Instruction> getAbsoluteIndexedXBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 
-    @Override
-    AbsoluteIndexedYBuilder<Instruction> getAbsoluteIndexedYBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	AbsoluteIndexedYBuilder<Instruction> getAbsoluteIndexedYBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 
-    @Override
-    ImpliedBuilder<Instruction> getImpliedBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	ImpliedBuilder<Instruction> getImpliedBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 
-    @Override
-    IndirectBuilder<Instruction> getIndirectBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	IndirectBuilder<Instruction> getIndirectBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 
-    @Override
-    RelativeBuilder<Instruction> getRelativeBuilder() {
-        throw new UnsupportedOperationException("TODO test and implement");
-    }
+	@Override
+	RelativeBuilder<Instruction> getRelativeBuilder() {
+		throw new UnsupportedOperationException("TODO test and implement");
+	}
 }

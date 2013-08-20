@@ -16,5 +16,5 @@
 package org.pirinen.c64dslj.builder;
 
 public interface DataType<T> {
-    T getValue();
+	T getValue();
 }

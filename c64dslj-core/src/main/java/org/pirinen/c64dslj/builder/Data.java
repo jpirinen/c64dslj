@@ -17,14 +17,14 @@ package org.pirinen.c64dslj.builder;
 
 public class Data implements DataType<byte[]> {
 
-    private byte[] data;
+	private byte[] data;
 
-    public Data(byte[] data) {
-        this.data = data;
-    }
+	public Data(byte[] data) {
+		this.data = data;
+	}
 
-    @Override
-    public byte[] getValue() {
-        return data;
-    }
+	@Override
+	public byte[] getValue() {
+		return data;
+	}
 }

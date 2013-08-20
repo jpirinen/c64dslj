@@ -11,37 +11,37 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
 public class EmptyOperand extends OperandBase {
 
-    public EmptyOperand() {
-    }
+	public EmptyOperand() {
+	}
 
-    @Override
-    public byte[] getData() {
-        return new byte[0];
-    }
+	@Override
+	public byte[] getData() {
+		return new byte[0];
+	}
 
-    @Override
-    public String toDsl() {
-        return "";
-    }
+	@Override
+	public String toDsl() {
+		return "";
+	}
 
-    @Override
-    public int getValue() {
-        throw new RuntimeException(getClass().getSimpleName() + " has no value");
-    }
+	@Override
+	public int getValue() {
+		throw new RuntimeException(getClass().getSimpleName() + " has no value");
+	}
 
-    @Override
-    public String toString() {
-        return "";
-    }
+	@Override
+	public String toString() {
+		return "";
+	}
 
-    @Override
-    public int getLength() {
-        return 0;
-    }
+	@Override
+	public int getLength() {
+		return 0;
+	}
 }

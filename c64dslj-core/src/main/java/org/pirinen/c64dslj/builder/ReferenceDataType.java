@@ -20,24 +20,24 @@ import org.pirinen.c64dslj.model.Program;
 
 public class ReferenceDataType implements DataType<Byte> {
 
-    private Program program;
-    private String labelName;
-    private boolean msb;
-    
-    public ReferenceDataType(Program program, String label, boolean msb) {
-        this.program = program;
-        this.labelName = label;
-        this.msb = msb;
-    }
-    
-    @Override
-    public Byte getValue() {
-        Label label = program.getLabel(labelName);
-        int address = label.getPosition()+program.getStartingAddress();
-        if (msb) {
-         return (byte)((address & 0xff00)>>8);
-        }
-        return (byte)(address & 0xff);
-    }
+	private Program program;
+	private String labelName;
+	private boolean msb;
+
+	public ReferenceDataType(Program program, String label, boolean msb) {
+		this.program = program;
+		this.labelName = label;
+		this.msb = msb;
+	}
+
+	@Override
+	public Byte getValue() {
+		Label label = program.getLabel(labelName);
+		int address = label.getPosition() + program.getStartingAddress();
+		if (msb) {
+			return (byte) ((address & 0xff00) >> 8);
+		}
+		return (byte) (address & 0xff);
+	}
 
 }

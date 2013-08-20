@@ -15,8 +15,8 @@
 
 package org.pirinen.c64dslj.builder;
 
-
 public interface ZeropageIndexedXBuilder<T> extends Builder {
-    T zeropage_X(DataType<Byte> value);
-    T zeropage_X(int value);
+	T zeropage_X(DataType<Byte> value);
+
+	T zeropage_X(int value);
 }

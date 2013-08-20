@@ -11,41 +11,40 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
-
 public class ProgramInstruction {
-    private int position;
-    private Instruction instruction;
+	private int position;
+	private Instruction instruction;
 
-    ProgramInstruction(int position, Instruction instruction) {
-        this.position = position;
-        this.instruction = instruction;
-    }
+	ProgramInstruction(int position, Instruction instruction) {
+		this.position = position;
+		this.instruction = instruction;
+	}
 
-    public int getPosition() {
-        return position;
-    }
+	public int getPosition() {
+		return position;
+	}
 
-    public int getNextPosition() {
-        return position + instruction.getLength();
-    }
+	public int getNextPosition() {
+		return position + instruction.getLength();
+	}
 
-    public Instruction getInstruction() {
-        return instruction;
-    }
+	public Instruction getInstruction() {
+		return instruction;
+	}
 
-    Instruction getInstruction(int startingAddress) {
-        if (instruction.containsAbsoluteLabel()) {
-            instruction.setStartingAddress(startingAddress);
-        }
-        return instruction;
-    }
+	Instruction getInstruction(int startingAddress) {
+		if (instruction.containsAbsoluteLabel()) {
+			instruction.setStartingAddress(startingAddress);
+		}
+		return instruction;
+	}
 
-    public int getAbsoluteAddress(int startingAddress) {
-        return startingAddress + position;
-    }
+	public int getAbsoluteAddress(int startingAddress) {
+		return startingAddress + position;
+	}
 
 }

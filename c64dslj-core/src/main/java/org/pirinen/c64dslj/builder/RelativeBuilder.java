@@ -16,5 +16,5 @@
 package org.pirinen.c64dslj.builder;
 
 public interface RelativeBuilder<T> extends Builder {
-    T label(String name);
+	T label(String name);
 }

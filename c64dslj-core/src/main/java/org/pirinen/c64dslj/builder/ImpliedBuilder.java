@@ -15,7 +15,6 @@
 
 package org.pirinen.c64dslj.builder;
 
-
 public interface ImpliedBuilder<T> extends Builder {
-    T implied();
+	T implied();
 }

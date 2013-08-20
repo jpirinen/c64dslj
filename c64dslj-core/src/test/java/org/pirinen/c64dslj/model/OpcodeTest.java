@@ -11,20 +11,19 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.pirinen.c64dslj.model.Opcode;
 
 public class OpcodeTest {
 
-    @Test
-    public void testSingleValueOpcode() {
-        Opcode dex = Opcode.DEX;
-        Assert.assertEquals("DEX", dex.name());
-    }
+	@Test
+	public void testSingleValueOpcode() {
+		Opcode dex = Opcode.DEX;
+		Assert.assertEquals("DEX", dex.name());
+	}
 
 }

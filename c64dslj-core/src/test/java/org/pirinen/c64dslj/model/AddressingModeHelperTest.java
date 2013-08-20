@@ -11,26 +11,22 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.pirinen.c64dslj.model.AddressingMode;
-import org.pirinen.c64dslj.model.AddressingModeHelper;
-import org.pirinen.c64dslj.model.Immediate;
-import org.pirinen.c64dslj.model.Implied;
 
 public class AddressingModeHelperTest {
-	
+
 	@Test
 	public void testImmediate() {
 		AddressingModeHelper helper = AddressingModeHelper.getInstance();
 		AddressingMode mode = helper.get(0xA9);
 		Assert.assertEquals(Immediate.class, mode.getClass());
 	}
-	
+
 	@Test
 	public void testImplied() {
 		AddressingModeHelper helper = AddressingModeHelper.getInstance();

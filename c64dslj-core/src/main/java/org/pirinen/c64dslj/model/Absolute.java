@@ -11,13 +11,12 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
-
 public class Absolute extends AddressingMode {
-    public Absolute(int opcode) {
-        super(opcode, 2);
-    }
+	public Absolute(int opcode) {
+		super(opcode, 2);
+	}
 }

@@ -11,43 +11,43 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-*/
+ */
 
 package org.pirinen.c64dslj.model;
 
 import org.pirinen.c64dslj.builder.DataType;
 
 public class OneByteOperand extends OperandBase {
-    private DataType<Byte> value;
-    private byte[] data = new byte[1];
+	private DataType<Byte> value;
+	private byte[] data = new byte[1];
 
-    public OneByteOperand(DataType<Byte> data) {
-        value = data;
-    }
-    
-    @Override
-    public byte[] getData() {
-        data[0] = (byte) (value.getValue() & 0xff);
-        return data;
-    }
+	public OneByteOperand(DataType<Byte> data) {
+		value = data;
+	}
 
-    @Override
-    public String toDsl() {
-        return "(_" + value + ")";
-    }
+	@Override
+	public byte[] getData() {
+		data[0] = (byte) (value.getValue() & 0xff);
+		return data;
+	}
 
-    @Override
-    public int getValue() {
-        return value.getValue();
-    }
+	@Override
+	public String toDsl() {
+		return "(_" + value + ")";
+	}
 
-    @Override
-    public String toString() {
-        return "" + getValue();
-    }
+	@Override
+	public int getValue() {
+		return value.getValue();
+	}
 
-    @Override
-    public int getLength() {
-        return 1;
-    }
+	@Override
+	public String toString() {
+		return "" + getValue();
+	}
+
+	@Override
+	public int getLength() {
+		return 1;
+	}
 }

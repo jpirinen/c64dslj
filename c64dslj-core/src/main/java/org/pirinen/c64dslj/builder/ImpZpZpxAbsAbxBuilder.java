@@ -15,7 +15,8 @@
 
 package org.pirinen.c64dslj.builder;
 
-public interface ImpZpZpxAbsAbxBuilder<T> extends ImpliedBuilder<T>, ZeropageBuilder<T>, ZeropageIndexedXBuilder<T>,
-        AbsoluteBuilder<T>, AbsoluteIndexedXBuilder<T> {
+public interface ImpZpZpxAbsAbxBuilder<T> extends ImpliedBuilder<T>,
+		ZeropageBuilder<T>, ZeropageIndexedXBuilder<T>, AbsoluteBuilder<T>,
+		AbsoluteIndexedXBuilder<T> {
 	// intentionally left blank
 }

@@ -20,16 +20,16 @@ import org.pirinen.c64dslj.model.Instruction;
 
 public class FluentAbsoluteBuilder extends FluentMultiBuilderAdapter {
 
-    private AbsoluteBuilder<Instruction> ib;
+	private AbsoluteBuilder<Instruction> ib;
 
-    FluentAbsoluteBuilder(FluentBuilder b, AbsoluteBuilder<Instruction> ib) {
-        super(b);
-        this.ib = ib;
-    }
+	FluentAbsoluteBuilder(FluentBuilder b, AbsoluteBuilder<Instruction> ib) {
+		super(b);
+		this.ib = ib;
+	}
 
-    @Override
-    AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
-        return ib;
-    }
+	@Override
+	AbsoluteBuilder<Instruction> getAbsoluteBuilder() {
+		return ib;
+	}
 
 }

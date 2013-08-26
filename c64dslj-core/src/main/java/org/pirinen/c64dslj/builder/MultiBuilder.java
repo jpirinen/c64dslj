@@ -88,6 +88,12 @@ public class MultiBuilder extends InstructionBuilder implements
 	}
 
 	@Override
+	public Instruction absolute_Y(String labelName) {
+		return new Instruction(getCommand(AbsoluteIndexedY.class),
+				new AbsoluteLabelOperand(labelName), true);
+	}
+
+	@Override
 	public Instruction absolute_X(int value) {
 		return new Instruction(getCommand(AbsoluteIndexedX.class),
 				new TwoByteOperand(value));

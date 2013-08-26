@@ -15,10 +15,16 @@
 
 package org.pirinen.c64dslj.fluent;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import static org.pirinen.c64dslj.builder.ByteHex.$01;
 
+import java.io.IOException;
+
+import org.junit.Ignore;
 import org.junit.Test;
 import org.pirinen.c64dslj.TUtil;
+import org.pirinen.c64dslj.model.Label;
 import org.pirinen.c64dslj.model.Program;
 
 public class FluentBuilderTest {
@@ -30,4 +36,42 @@ public class FluentBuilderTest {
 		Program p = b.end(4096);
 		TUtil.assertProgramData(p, 169, 1, 141, 33, 208, 96);
 	}
+
+	@Test
+	public void ldaAbsoluteLabel() throws IOException {
+		FluentBuilder b = Program.withFluent();
+		Label label = Label.name("label");
+		b.label(label.getName());
+		b.lda().absolute(label.getName());
+		Program p = b.end(4096);
+		TUtil.assertProgramData(p, 173, 0, 16);
+	}
+
+	@Test
+	public void ldaAbsoluteLabelPlusY() throws IOException {
+		FluentBuilder b = Program.withFluent();
+		Label label = Label.name("label");
+		b.label(label.getName());
+		b.lda().absolute_Y(label.getName());
+		Program p = b.end(4096);
+		TUtil.assertProgramData(p, 185, 0, 16);
+	}
+
+	/**
+	 * Bug test, unignore and fix
+	 */
+	@Ignore
+	@Test
+	public void ldaAbsoluteLabelPlusYFailsIfLabelNotDefined() {
+		FluentBuilder b = Program.withFluent();
+		Label label = Label.name("label");
+		b.lda().absolute_Y(label.getName());
+		try {
+			b.end(4096);
+			fail();
+		} catch (IllegalArgumentException e) {
+			assertEquals("todo", e.getMessage());
+		}
+	}
+
 }

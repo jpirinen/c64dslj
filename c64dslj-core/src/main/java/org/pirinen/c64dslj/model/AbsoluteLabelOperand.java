@@ -24,8 +24,7 @@ public class AbsoluteLabelOperand extends LabelOperandBase {
 
 	@Override
 	public byte[] getData() {
-		TwoByteOperand operand = new TwoByteOperand(startingAddress
-				+ getLabelPosition());
+		TwoByteOperand operand = new TwoByteOperand(getValue());
 		return operand.getData();
 	}
 

@@ -24,6 +24,7 @@ public class TUtil {
 	public static void assertProgramData(Program actual, int... expected)
 			throws IOException {
 		byte[] data = actual.getData();
+		Assert.assertEquals(expected.length, data.length);
 		for (int i = 0; i < data.length; i++) {
 			Assert.assertEquals("Values at position " + i + " do not match",
 					expected[i], data[i] & 0xff);

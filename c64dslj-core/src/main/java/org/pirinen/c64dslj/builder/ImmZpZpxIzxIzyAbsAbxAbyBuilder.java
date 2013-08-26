@@ -20,5 +20,7 @@ public interface ImmZpZpxIzxIzyAbsAbxAbyBuilder<T> extends ImmediateBuilder<T>,
 		IndexedIndirectBuilder<T>, IndirectedIndexedBuilder<T>,
 		AbsoluteBuilder<T>, AbsoluteIndexedXBuilder<T>,
 		AbsoluteIndexedYBuilder<T> {
+
 	// intentionally left blank
+
 }

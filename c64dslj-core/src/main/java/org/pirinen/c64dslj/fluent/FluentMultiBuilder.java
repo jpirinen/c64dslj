@@ -186,6 +186,12 @@ abstract class FluentMultiBuilder implements
 	}
 
 	@Override
+	public FluentBuilder absolute_Y(String label) {
+		b.getProgramBuilder().i(getAbsoluteIndexedYBuilder().absolute_Y(label));
+		return b;
+	}
+
+	@Override
 	public FluentBuilder implied() {
 		b.getProgramBuilder().i(getImpliedBuilder().implied());
 		return b;

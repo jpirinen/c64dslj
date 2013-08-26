@@ -1,0 +1,5 @@
+# paths are relative to this file's directory
+WSNAME=c64dslj
+WSROOT=../../..
+WSDEFDEF_MODULE=../wsdefdef
+WSDEFDEF_CLASS=org.pirinen.c64dslj.iwant.wsdefdef.C64dsljWorkspaceProvider

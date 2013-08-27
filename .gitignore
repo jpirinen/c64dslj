@@ -1,14 +1,1 @@
-*.class
-.cache
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# mvn, sbt
-target/
-
-# eclipse
-.project
-.classpath
+*~

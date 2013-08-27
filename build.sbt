@@ -12,6 +12,8 @@ autoScalaLibrary := false
 
 EclipseKeys.executionEnvironment := Some(EclipseExecutionEnvironment.JavaSE16)
 
+EclipseKeys.projectFlavor := EclipseProjectFlavor.Java
+
 libraryDependencies += "com.novocode" % "junit-interface" % "0.10-M2" % "test->default"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "1.8" % "test"
